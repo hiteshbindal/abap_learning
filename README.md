@@ -13,8 +13,7 @@ This repository contains all lecture notes, code examples, and illustrated exerc
 All images are Eclipse ADT / SAP GUI mockups generated to illustrate key concepts without requiring a live SAP system for reading the notes.
 
 > **Official course details** (provided by colleague):
-> [M-SAP-WP-1.2 Client-Server Communication with SAP ABAP — Course PDF](https://sap-my.sharepoint.com/personal/h_bindal_sap_com/Documents/Microsoft%20Copilot%20Chat%20Files/M-SAP-WP-1.2%20Client-Server%20communication%20with%20SAP%20ABAP.pdf)
-> *(SAP internal SharePoint — requires SAP network access)*
+> [M-SAP-WP-1.2 Client-Server Communication with SAP ABAP — Course PDF](docs/M-SAP-WP-1.2_Course_Details.pdf)
 
 ---
 
