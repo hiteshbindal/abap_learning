@@ -1,4 +1,4 @@
-# Assessment: Final Project Report
+# Assessment: Written Examination (Klausur)
 
 **Module:** M-SAP-WP-1.2 Client-Server Communication with SAP ABAP  
 **Programme:** SAP Engineering and Analytics (M.Sc.)  
@@ -9,264 +9,193 @@
 
 ## 1. Overview
 
-This module is assessed entirely through a **Project Report**. There is no written examination.
+This module is assessed entirely through a **Written Examination (Klausur)**. There is no project report or academic paper.
 
-The report demonstrates that you can connect the lecture content to a focused topic of your choosing, engage meaningfully with primary sources, and present technical material in clear, structured written English.
+The exam tests your ability to recall, apply, and reason about the ABAP concepts covered across all seven lectures. Questions are designed to demonstrate understanding, not rote memorisation — you will be expected to read, analyse, and write short ABAP code, explain design decisions, and compare techniques.
 
-> **Key point:** The report is not a summary of lecture slides. It is an independent piece of technical writing that shows you can analyse, compare, and critically evaluate a topic within the SAP ABAP domain.
+> **Key point:** The exam covers all lecture content. Active engagement with the lectures, the mandatory textbook, and the hands-on exercises throughout the semester is the most effective preparation.
 
 ---
 
-## 2. Project Report Requirements
+## 2. Exam Format
 
-### 2.1 Formal Requirements
-
-| Item | Requirement |
+| Item | Details |
 |---|---|
-| Length | 10–15 pages (body text only — see below) |
+| Duration | 90 minutes |
+| Permitted aids | None (closed-book) |
 | Language | English |
-| Format | Microsoft Word (.docx) or PDF |
-| Submission | Via the learning management system (Moodle / equivalent) |
-| Deadline | As communicated by the module coordinator |
+| Location | As communicated by the module coordinator |
+| Date | As communicated by the module coordinator |
 
-**Pages excluded from the 10–15 page count:**
-
-- Cover page
-- Table of contents
-- Reference list / bibliography
-- Appendices (optional — use sparingly)
-
-### 2.2 Required Report Structure
-
-Your report must follow this structure. Suggested page allocations are given as guidance, not hard limits.
-
-1. **Introduction** *(~1 page)*  
-   State the motivation for your topic choice, define the scope, and formulate a clear research question or thesis statement. Example: *"This report examines whether ABAP Objects offers measurable maintainability advantages over classical ABAP in large-scale SAP projects."*
-
-2. **Theoretical Background** *(3–4 pages)*  
-   Introduce the relevant SAP and ABAP concepts that underpin your topic. This section demonstrates your understanding of the technical foundation. Reference lecture content, but go further by drawing on books and SAP documentation.
-
-3. **Technical Analysis / Implementation** *(4–6 pages)*  
-   This is the core of your report. Depending on your topic, this section may include:
-   - Code comparisons (before/after, two paradigms, two approaches)
-   - Architecture or design diagrams
-   - A step-by-step implementation walkthrough
-   - Benchmark or trace analysis results
-   - A case study or hypothetical project scenario
-
-   Include **at least three meaningful ABAP code examples**, each introduced and explained in the text.
-
-4. **Critical Evaluation** *(2–3 pages)*  
-   Analyse the strengths, weaknesses, limitations, and trade-offs of your chosen topic or approach. Offer best-practice recommendations grounded in your research. Avoid unsubstantiated claims.
-
-5. **Conclusion** *(~1 page)*  
-   Summarise your findings in relation to your research question. Identify open questions or areas for future investigation.
-
-6. **References**  
-   Minimum **five sources**. Acceptable source types: SAP official documentation (help.sap.com), SAP PRESS books, SAP Community blogs (community.sap.com), peer-reviewed papers. Wikipedia is **not** an acceptable primary source. All sources cited in the body text must appear here; all listed references must be cited in the text.
+**No aids are permitted during the examination.** This includes notes, printed materials, textbooks, electronic devices, and calculators. Formula sheets or syntax reference cards will not be provided. Students are expected to have working knowledge of ABAP syntax and SAP concepts from memory.
 
 ---
 
-## 3. Topic Options
+## 3. Exam Structure and Question Types
 
-Choose **one** topic from the list below. You may propose an alternative topic to the module coordinator for approval, provided it falls within the scope of SAP ABAP development.
-
----
-
-### Topic 1: Evolution of ABAP
-
-ABAP has transformed over four decades from a simple procedural batch language into a modern, object-oriented, cloud-ready platform. This topic traces that evolution — from classical ABAP in the 1980s, through the introduction of ABAP Objects in 1999, to the modern constructs introduced in ABAP 7.4 and 7.5 (inline declarations, constructor operators, string templates), and onwards to ABAP for SAP HANA, CDS Views, and the RESTful ABAP Programming Model (RAP). Understanding this evolution helps developers make informed decisions about which techniques to apply in new and existing projects.
-
-**Primary lectures:** 1, 2, 3  
-**Secondary lectures:** 4, 7
-
-**Suggested angles:**
-- Compare a classical ABAP solution (FORM routines, TYPE c fields) with its modern equivalent (classes, inline DATA, string processing)
-- Analyse the migration challenges when moving legacy code to modern ABAP
-- Evaluate the impact of SAP HANA's column-store architecture on ABAP programming rules
+The exam consists of **three sections** totalling **100 marks**.
 
 ---
 
-### Topic 2: ABAP Objects vs Classical ABAP
+### Section A — Knowledge and Comprehension *(30 marks)*
 
-Classical ABAP relies on FORM routines, function modules, and global data. ABAP Objects introduced encapsulation, inheritance, interfaces, and polymorphism. This topic makes a rigorous technical comparison of the two paradigms: what problems does OO ABAP solve, where does it introduce complexity, and what is the real-world adoption rate in SAP projects? The report should include practical code examples demonstrating the same business logic implemented in both paradigms, and evaluate the difference in testability (ABAP Unit), maintainability, and reuse.
+Short-answer questions testing factual recall and understanding of concepts from all lectures.
 
-**Primary lectures:** 3  
-**Secondary lectures:** 1, 2, 6
+**Format:** 10 questions × 3 marks each  
+**Expected response length:** 2–5 sentences per question
 
-**Suggested angles:**
-- Side-by-side implementation: a customer validation routine as FORM vs. as a class method
-- Testability: how ABAP Unit testing requires OO design (dependency injection, interfaces)
-- Survey of real SAP codebases — what proportion of custom code uses OO patterns?
-
----
-
-### Topic 3: Performance Optimization Techniques
-
-SAP systems process millions of records; a single poorly written SELECT can degrade system performance for all users. This topic provides a deep technical analysis of ABAP performance: SQL optimization (WHERE clauses, field selection, bulk fetch, JOIN vs. FOR ALL ENTRIES), internal table type selection (STANDARD, SORTED, HASHED, secondary keys), application-server buffering, and the use of runtime analysis tools (ST05 SQL Trace, SAT ABAP Runtime Analysis). The report should include before-and-after code comparisons with quantified or estimated performance impacts.
-
-**Primary lectures:** 7  
-**Secondary lectures:** 1, 4
-
-**Suggested angles:**
-- Benchmark: measure execution time of nested SELECT vs. FOR ALL ENTRIES for increasing dataset sizes
-- HANA push-down: how CDS views and AMDP move computation to the database layer
-- Cost model: estimate roundtrip costs for different access patterns
+**Example questions:**
+- What is the difference between a transparent table and a pooled table in the ABAP Data Dictionary?
+- Name three internal table types available in ABAP and state one use case where each is appropriate.
+- What is a BAdI and how does it differ from a classic User Exit?
+- Explain the purpose of the PBO and PAI events in Dynpro programming.
+- What does the `FOR ALL ENTRIES` addition to `SELECT` do, and what is one important precaution when using it?
 
 ---
 
-### Topic 4: SAP Enhancements Framework
+### Section B — Code Reading and Analysis *(40 marks)*
 
-When SAP delivers standard software, customers cannot safely modify the delivered source code — every support package risks overwriting such changes. SAP's Enhancement Framework provides upgrade-safe extension points: User Exits, Customer Exits, Enhancement Spots, BAdIs (classic and kernel). This topic analyses each technique in depth, compares their capabilities and limitations, and presents a case study of implementing a BAdI in a real or simulated purchasing or sales scenario. The report should make a clear argument for why BAdIs are the recommended approach for most scenarios.
+Two code-analysis tasks. Each presents an ABAP code snippet and asks you to read, explain, or critique it.
 
-**Primary lectures:** 6  
-**Secondary lectures:** 3, 4
+**Format:** 2 tasks × 20 marks each  
+**Expected response length:** Structured written answer with specific references to the code
 
-**Suggested angles:**
-- Comparison table: technique, upgrade safety, API stability, testability, typical use case
-- Step-by-step BAdI implementation with test strategy
-- Analyse what happens to each technique type during an S/4HANA upgrade
+**What is tested:**
+- Correct identification of what a code snippet does and why
+- Spotting errors, inefficiencies, or deprecated patterns
+- Suggesting improvements with justification
+- Tracing the flow of data through ABAP structures (internal tables, field symbols, class methods)
 
----
-
-### Topic 5: ABAP and SAP S/4HANA
-
-SAP S/4HANA is the successor to SAP ECC, built on the SAP HANA in-memory database. The transition has significant implications for ABAP developers: some classical coding patterns are deprecated (SELECT * on large tables, SELECT...ENDSELECT, direct access to certain compatibility views), new data models are simpler (Universal Journal in FI), and new opportunities arise (ABAP CDS, AMDP, Embedded Analytics). This topic analyses what concretely changes for an ABAP developer moving from ECC to S/4HANA, using the SAP Custom Code Migration tools and ABAP Test Cockpit findings as evidence.
-
-**Primary lectures:** 1, 4, 7  
-**Secondary lectures:** 5, 6
-
-**Suggested angles:**
-- Catalogue deprecated statements and their S/4HANA replacements
-- Analyse the simplified data model (e.g. removal of BSEG/BKPF separation) and its ABAP impact
-- Evaluate the SAP Custom Code Migration app as a migration tooling approach
+**Example task:**
+> The following ABAP program reads all open sales orders into an internal table inside a loop. Identify the performance problem, explain why it causes an issue, and rewrite the relevant lines to correct it. (20 marks)
 
 ---
 
-### Topic 6: CDS Views and Modern ABAP
+### Section C — Applied Concepts *(30 marks)*
 
-Core Data Services (CDS) is a framework for defining semantically rich data models directly in the ABAP development environment. CDS views replace classical database views (SE11), support OData exposure for Fiori applications, provide built-in access control (DCL), and enable push-down calculations to SAP HANA. This topic introduces CDS syntax, compares CDS views to classical views on key dimensions (performance, reusability, OData readiness, maintenance), and demonstrates a worked example of a CDS view exposed as a Fiori List Report.
+One extended question requiring you to design or explain an ABAP solution for a described business scenario.
 
-**Primary lectures:** 1, 4, 7  
-**Secondary lectures:** 5
+**Format:** 1 question, multiple sub-parts  
+**Expected response length:** Structured written answer; ABAP pseudocode or real syntax may be used
 
-**Suggested angles:**
-- Syntax walkthrough: a classical JOIN view re-implemented as a CDS view
-- Annotations: @OData.publish, @UI, @Semantics — how they drive Fiori UI generation
-- Access control: CDS DCL vs. classical authorization checks in ABAP
+**What is tested:**
+- Selecting the appropriate ABAP technique for a given requirement
+- Justifying design decisions with reference to lecture concepts
+- Understanding architectural implications (modularisation, enhancements, UI choice)
 
----
-
-### Topic 7: RAP — RESTful ABAP Programming Model
-
-RAP is SAP's strategic programming model for building transactional Fiori applications on SAP BTP and S/4HANA. It combines CDS-based data modelling, behavior definitions (BDEF), behavior implementations (ABAP classes), and OData V4 service bindings into a unified development approach. This topic introduces the RAP concept, walks through building a simple "business object" (e.g. a course enrollment object), and contrasts the RAP approach with classical Dynpro programming in terms of architecture, effort, and maintainability.
-
-**Primary lectures:** 3, 4, 5  
-**Secondary lectures:** 1, 6
-
-**Suggested angles:**
-- Contrast: classical Dynpro module pool vs. RAP-based Fiori app for the same use case
-- RAP "Hello World": step-by-step from CDS entity to running Fiori tile
-- Evaluate RAP's managed vs. unmanaged scenario — when to use which
+**Example question:**
+> A company needs to add a custom validation step to a standard SAP procurement transaction without modifying SAP standard code. (a) Which enhancement technique would you recommend and why? (b) Sketch the implementation steps. (c) What risks does this approach carry compared with a direct modification? (30 marks)
 
 ---
 
-## 4. Evaluation Criteria
+## 4. Topics and Lecture Coverage
 
-Reports are graded on a German university scale of 1.0 (excellent) to 5.0 (fail). A grade of 4.0 or better is required to pass the module.
+All seven lectures are examinable. The weight of each topic in the exam broadly reflects the number of lectures dedicated to it.
 
-| Criterion | Weight | Description |
+| Lecture | Topic | Approximate exam weight |
+|---|---|:---:|
+| 1 | Introduction to SAP and ABAP | ~10% |
+| 2 | Data Types and Data Objects | ~15% |
+| 3 | Modularization Techniques | ~15% |
+| 4 | ABAP Data Dictionary | ~15% |
+| 5 | User Interface Programming | ~15% |
+| 6 | Enhancements and Modifications | ~15% |
+| 7 | Performance Tuning and Best Practices | ~15% |
+
+> Questions frequently combine concepts from multiple lectures. For example, a performance question may require knowledge of both internal table types (Lecture 2) and SELECT optimisation (Lecture 7).
+
+---
+
+## 5. Evaluation and Grading
+
+The exam is graded on a German university scale of 1.0 (excellent) to 5.0 (fail). A grade of 4.0 or better is required to pass the module.
+
+| Grade | Marks required | Description |
 |---|---|---|
-| **Structure and clarity** | 15% | Logical flow between sections; clear section headings; academic writing style; appropriate use of figures and tables; no significant language errors |
-| **Technical accuracy** | 30% | All ABAP concepts and statements are correct; code examples are syntactically valid and would compile; no factual errors about SAP products or processes |
-| **Depth of analysis** | 25% | Goes significantly beyond lecture material; engages critically with SAP documentation and published books; presents a clear argument or thesis rather than merely describing |
-| **Code examples** | 15% | At least three meaningful, working ABAP code snippets; each is properly introduced, explained, and connected to the surrounding argument |
-| **References** | 15% | Minimum five acceptable sources; all cited in-text using a consistent citation style (APA or IEEE recommended); no Wikipedia as primary source |
+| 1.0 | 95–100 | Exceptional — thorough, precise, well-reasoned answers |
+| 1.3 | 90–94 | |
+| 1.7 | 85–89 | |
+| 2.0 | 80–84 | Good — solid understanding with minor gaps |
+| 2.3 | 75–79 | |
+| 2.7 | 70–74 | |
+| 3.0 | 65–69 | Satisfactory — adequate coverage with some inaccuracies |
+| 3.3 | 60–64 | |
+| 3.7 | 55–59 | |
+| 4.0 | 50–54 | Sufficient — minimum pass threshold |
+| 5.0 | < 50 | Fail |
 
-> **Note on technical accuracy:** Even a well-written report will receive a reduced grade if the ABAP code examples contain syntax errors or if SAP concepts are described incorrectly. Test your code examples in ADT or the SAP system before submitting.
+**Marking guidance:**
 
----
+- **Section A:** Full marks for responses that are factually correct and complete. Partial credit is awarded for partially correct answers.
+- **Section B:** Marks are awarded for correct identification of problems, accuracy of explanation, and quality of the proposed fix. A correct fix with no explanation earns half marks at most.
+- **Section C:** Marks are distributed across sub-parts as indicated in the exam paper. Justifications must reference specific ABAP or SAP concepts to receive full marks.
 
-## 5. Topic–Lecture Coverage Matrix
-
-Use this matrix to identify which lectures are most relevant for your chosen topic. **P** = primary relevance, **S** = secondary relevance.
-
-| Topic | L1 | L2 | L3 | L4 | L5 | L6 | L7 |
-|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| 1 — Evolution of ABAP | P | P | P | S | — | — | S |
-| 2 — ABAP Objects vs Classical | S | S | P | — | — | S | — |
-| 3 — Performance Optimization | P | — | — | S | — | — | P |
-| 4 — Enhancements Framework | — | — | S | S | — | P | — |
-| 5 — ABAP and S/4HANA | P | — | — | P | S | S | P |
-| 6 — CDS Views and Modern ABAP | P | — | — | P | S | — | P |
-| 7 — RAP | S | — | P | P | P | S | — |
+> **Note on code accuracy:** In Sections B and C, ABAP code you write is assessed on correctness of logic and syntax. Minor syntactic slips (e.g. a missing period) may be overlooked if the intent is clear, but logical errors will reduce your mark. Write only what you know — an incorrect fix is worse than leaving a blank.
 
 ---
 
-## 6. Suggested Timeline
+## 6. Preparation Guidance
 
-The module runs over approximately eight weeks alongside the lecture programme. The following timeline is a recommendation, not a hard schedule.
+### 6.1 Suggested Study Approach
 
 | Week | Activity |
 |---|---|
-| **1–2** | Attend Lectures 1–2; choose your topic; begin reading the mandatory textbook chapters relevant to your topic |
-| **3–4** | Attend Lectures 3–4; conduct primary research: SAP documentation, SAP PRESS books, SAP Community blogs; take notes with source references |
-| **5–6** | Attend Lectures 5–6; draft Report Sections 2 and 3 (theoretical background and technical analysis); write and test all code examples |
-| **7** | Attend Lecture 7; draft Sections 1, 4, and 5 (introduction, critical evaluation, conclusion); compile reference list |
-| **8** | Review complete draft; proofread for language and technical accuracy; format consistently; submit before deadline |
+| **1–2** | Review lecture notes for Lectures 1–2; re-attempt any in-lecture exercises |
+| **3–4** | Review Lectures 3–4; write out key syntax from memory (FORM routines, function module calls, class definitions); practice reading unfamiliar code snippets |
+| **5–6** | Review Lectures 5–6; practice explaining UI techniques and enhancement types in your own words |
+| **7** | Review Lecture 7; practise identifying performance anti-patterns and their corrections |
+| **8** | Full revision across all topics; work through past exercises without notes; time yourself |
 
-> **Recommendation:** Do not leave writing to the final week. A well-structured argument takes time to develop. Starting your outline in Week 1 — even if only a few bullet points — will significantly improve the final result.
+### 6.2 Effective Preparation Strategies
 
----
-
-## 7. Academic Integrity
-
-All submitted work must comply with the academic integrity policy of Hochschule Fresenius.
-
-- All text must be your own original writing or properly cited quotation.
-- All code examples must be original. You may reference and adapt examples from SAP documentation or textbooks, but you must cite the source and explain the adaptation.
-- **Use of AI-generated text** (e.g. from large language models) must be declared explicitly in a short statement on the cover page, with a description of how it was used. Undeclared AI-generated content is treated as plagiarism.
-- Plagiarism — submitting the work of another person as your own, or reproducing source text without citation — results in a grade of 5.0 (fail) for the module and may have further academic consequences.
+- **Write code by hand.** During the exam you will have no IDE, no autocomplete, and no syntax check. Practice writing ABAP statements on paper or without running them in ADT. Focus on SELECT, internal table operations, class definitions, and CALL FUNCTION / CALL METHOD.
+- **Know the "why" not just the "what".** Questions ask for justification. Know why `FOR ALL ENTRIES` outperforms nested SELECTs, why BAdIs are preferred over direct modifications, why HASHED tables suit certain access patterns.
+- **Use the lecture structure as a checklist.** Each lecture has a defined set of concepts. Work through each systematically and ask yourself: Can I explain this concept? Can I write an example? Can I identify a mistake involving it?
+- **Focus on comparison questions.** The exam frequently asks you to compare two techniques (e.g. FORM vs. method, classical view vs. CDS, STANDARD vs. SORTED table). Prepare comparison notes for the major contrasts covered in lectures.
 
 ---
 
-## 8. Recommended Resources
+## 7. Recommended Resources
 
-The following resources support all seven topic options. Obtain the mandatory textbook before beginning your research.
+The following resources support revision across all topics.
 
 ### Mandatory
 
 - Horst Keller, *ABAP Objects: Introduction to Programming SAP Applications*, 4th Edition, SAP PRESS, 2020.  
-  Comprehensive reference for all ABAP language concepts. Relevant chapters vary by topic.
+  The primary reference for all ABAP language concepts covered in the lectures. Relevant chapters should be reviewed in parallel with each lecture.
 
 ### Further Reading
 
 - Paul Hardy, *ABAP to the Future*, 3rd Edition, SAP PRESS, 2019.  
-  Covers modern ABAP syntax, CDS, RAP, and SAP HANA-specific development. Particularly relevant for Topics 1, 5, 6, 7.
+  Covers modern ABAP syntax, CDS, RAP, and SAP HANA-specific development. Particularly useful for Lectures 1, 5, 6, 7.
 
 - Thomas Schneider, *Getting Started with ABAP: Beginner's Guide*, SAP PRESS, 2016.  
-  Accessible introduction to all core ABAP topics. Useful supplementary reference for Topics 1–4.
+  Accessible overview of core ABAP topics. Useful for consolidating foundational concepts from Lectures 1–4.
 
 - James Wood, *Object-Oriented Programming with ABAP Objects*, 2nd Edition, SAP PRESS, 2015.  
-  In-depth OO ABAP reference. Essential for Topic 2.
-
-- Bernd Matzke, *SAP ABAP: Hands-on Test Projects with Business Scenarios*, Galileo Press, 2016.  
-  Worked examples connecting ABAP programming to realistic business cases.
+  In-depth OO ABAP reference. Essential for Lecture 3 (Modularization).
 
 ### Online Resources
 
-- **SAP Help Portal** — [help.sap.com](https://help.sap.com): official ABAP language reference, keyword documentation, CDS and RAP guides.
-- **SAP Community** — [community.sap.com](https://community.sap.com): practitioner blog posts, Q&A, and technical articles. Cite specific posts with author, title, and date.
-- **SAP Learning Hub** — if available through your institution, provides structured learning paths and official SAP courseware.
+- **SAP Help Portal** — [help.sap.com](https://help.sap.com): official ABAP keyword documentation. Use as a reference during study; it will not be available during the exam.
+- **SAP Community** — [community.sap.com](https://community.sap.com): practitioner blog posts and technical Q&A. Useful for understanding real-world application of exam topics.
 
-> All URLs accessed from online resources must include the date of access in your reference list.
+---
+
+## 8. Academic Integrity
+
+All examination work must comply with the academic integrity policy of Hochschule Fresenius.
+
+- The exam must be completed entirely independently. No collaboration with other students is permitted during or after the examination.
+- Use of any electronic device, notes, or printed material during the examination constitutes an exam violation and results in a grade of 5.0 (fail) for the module, which may have further academic consequences.
+- Impersonation — having another person take the exam on your behalf — is treated as examination fraud.
 
 ---
 
 ## Session Summary
 
-The assessment for this module rewards independent research and technical depth. The seven topic options each connect directly to the lecture programme, so the best preparation for the report is active engagement with the lectures and the mandatory textbook throughout the semester.
+The written examination rewards thorough, active engagement with the lecture material throughout the semester. It is not possible to prepare adequately by studying only in the final week.
 
-Choose a topic that genuinely interests you — the quality of analysis in a report written with curiosity is consistently higher than one written purely to satisfy requirements.
+Work through the exercises in each lecture, practice writing ABAP code from memory, and focus on understanding the reasoning behind each technique — not just its syntax.
 
 **Good luck.**
