@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mockup: adt_06_hello_world_output</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #888;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+  }
+  .adt {
+    width: 640px;
+    border: 1px solid #444;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+  }
+  .titlebar {
+    background: #3c3c3c;
+    color: #f0f0f0;
+    padding: 7px 12px;
+    font-size: 13px;
+  }
+  .tabbar {
+    background: #e8e8e8;
+    display: flex;
+    border-bottom: 2px solid #0078d4;
+  }
+  .tab {
+    padding: 6px 16px;
+    font-size: 12px;
+    color: #444;
+    border-right: 1px solid #ccc;
+    cursor: default;
+  }
+  .tab.active {
+    background: white;
+    color: #1a1a1a;
+    border-bottom: 2px solid white;
+    margin-bottom: -2px;
+    font-weight: 500;
+  }
+  .console-wrap {
+    display: flex;
+    background: white;
+    min-height: 180px;
+  }
+  .console-area {
+    flex: 1;
+    padding: 14px 16px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #1a1a1a;
+  }
+  .console-line {
+    margin-bottom: 2px;
+  }
+  .callout {
+    width: 220px;
+    margin: 14px 10px 10px 0;
+    padding: 10px 12px;
+    background: #fffde7;
+    border: 1px solid #d4a017;
+    font-size: 11.5px;
+    line-height: 1.7;
+    color: #333;
+    align-self: flex-start;
+    flex-shrink: 0;
+  }
+  .callout p { margin-bottom: 4px; }
+  .statusbar {
+    background: #2c2c2c;
+    color: #b0b0b0;
+    padding: 5px 12px;
+    font-size: 11px;
+    display: flex;
+    justify-content: space-between;
+    font-style: italic;
+  }
+  .status-ok { color: #4caf50; font-style: normal; }
+</style>
+</head>
+<body>
+  <div class="adt">
+    <div class="titlebar">Eclipse IDE — ABAP Development Tools (ADT)</div>
+
+    <div class="tabbar">
+      <div class="tab active">Console ×</div>
+      <div class="tab">z_abap_intro.clas.abap</div>
+    </div>
+
+    <div class="console-wrap">
+      <div class="console-area">
+        <div class="console-line">Hello World</div>
+      </div>
+
+      <div class="callout">
+        <p>☐ Output of out->write( 'Hello World' ).</p>
+        <p>☐ Console result — shown in ADT Console view.</p>
+        <p>☐ No 'ABAP List' tab — classes use the Console, not the classic list output screen.</p>
+      </div>
+    </div>
+
+    <div class="statusbar">
+      <span>Mockup: ADT console output after F9 execution</span>
+      <span class="status-ok">Class Z_ABAP_INTRO executed successfully.</span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mockup: adt_08_syntax_error_missing_period</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #888;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+  }
+  .adt {
+    width: 720px;
+    border: 1px solid #444;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+  }
+  .titlebar {
+    background: #3c3c3c;
+    color: #f0f0f0;
+    padding: 7px 12px;
+    font-size: 13px;
+  }
+  .tabbar {
+    background: #e8e8e8;
+    display: flex;
+    border-bottom: 2px solid #0078d4;
+  }
+  .tab.active {
+    background: white;
+    color: #1a1a1a;
+    padding: 6px 16px;
+    font-size: 12px;
+    border-right: 1px solid #ccc;
+    border-bottom: 2px solid white;
+    margin-bottom: -2px;
+    font-weight: 500;
+    cursor: default;
+  }
+  .fileinfo {
+    background: #f7f7f7;
+    padding: 3px 10px;
+    font-size: 11px;
+    color: #cc4400;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .editor-wrap {
+    display: flex;
+    background: white;
+  }
+  .code-col {
+    flex: 1;
+    padding: 10px 0;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 12.5px;
+    line-height: 1.65;
+  }
+  .ln {
+    display: flex;
+    align-items: center;
+  }
+  .ln-num {
+    min-width: 34px;
+    text-align: right;
+    padding-right: 12px;
+    color: #bbb;
+    border-right: 1px solid #eee;
+    margin-right: 12px;
+    user-select: none;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+  }
+  .err-icon {
+    color: #cc0000;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .ln-code {
+    white-space: pre;
+    color: #1a1a1a;
+  }
+  .ln.error-line .ln-code {
+    background: #fff0f0;
+    text-decoration: underline wavy #cc0000;
+    text-decoration-skip-ink: none;
+    padding: 1px 4px;
+    border-radius: 2px;
+  }
+  .kw  { color: #0070C0; }
+  .str { color: #a31515; }
+  .callout-error {
+    width: 230px;
+    margin: 12px 10px 10px 0;
+    padding: 11px 12px;
+    background: #fff0f0;
+    border: 1px solid #cc0000;
+    font-size: 11.5px;
+    line-height: 1.75;
+    color: #333;
+    align-self: flex-start;
+    flex-shrink: 0;
+  }
+  .callout-error .title {
+    color: #cc0000;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+  .callout-error p { margin-bottom: 3px; }
+  .callout-error .correct { color: #006600; font-family: 'Consolas', monospace; font-size: 11px; }
+
+  .problems-panel {
+    border-top: 2px solid #e0e0e0;
+  }
+  .problems-header {
+    background: #ececec;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    border-bottom: 1px solid #ddd;
+  }
+  .problems-cols {
+    display: grid;
+    grid-template-columns: 1fr 160px 80px;
+    padding: 3px 10px;
+    font-size: 11px;
+    color: #888;
+    border-bottom: 1px solid #f0f0f0;
+    font-weight: 600;
+  }
+  .problems-row {
+    display: grid;
+    grid-template-columns: 1fr 160px 80px;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-bottom: 1px solid #f0f0f0;
+    align-items: center;
+  }
+  .prob-desc { display: flex; align-items: center; gap: 6px; }
+  .err-badge {
+    color: white;
+    background: #cc0000;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  .statusbar {
+    background: #2c2c2c;
+    color: #b0b0b0;
+    padding: 5px 12px;
+    font-size: 11px;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+  <div class="adt">
+    <div class="titlebar">Eclipse IDE — ABAP Development Tools (ADT)</div>
+
+    <div class="tabbar">
+      <div class="tab active">z_abap_intro.clas.abap * ×</div>
+    </div>
+
+    <div class="fileinfo">☐ z_abap_intro.clas.abap [Inactive — unsaved changes]</div>
+
+    <div class="editor-wrap">
+      <div class="code-col">
+        <div class="ln"><span class="ln-num"></span><span class="ln-code"><span class="kw">CLASS</span> z_abap_intro <span class="kw">DEFINITION PUBLIC FINAL CREATE PUBLIC</span>.</span></div>
+        <div class="ln"><span class="ln-num"></span><span class="ln-code">  <span class="kw">PUBLIC SECTION</span>.</span></div>
+        <div class="ln"><span class="ln-num"></span><span class="ln-code">    <span class="kw">INTERFACES</span> if_oo_adt_classrun.</span></div>
+        <div class="ln"><span class="ln-num"></span><span class="ln-code"><span class="kw">ENDCLASS</span>.</span></div>
+        <div class="ln"><span class="ln-num"></span><span class="ln-code"></span></div>
+        <div class="ln"><span class="ln-num"></span><span class="ln-code"><span class="kw">CLASS</span> z_abap_intro <span class="kw">IMPLEMENTATION</span>.</span></div>
+        <div class="ln"><span class="ln-num"></span><span class="ln-code">  <span class="kw">METHOD</span> if_oo_adt_classrun~main.</span></div>
+        <div class="ln"><span class="ln-num"></span><span class="ln-code"></span></div>
+        <div class="ln error-line">
+          <span class="ln-num"><span class="err-icon">●</span></span>
+          <span class="ln-code">    out->write( <span class="str">'Hello World'</span> )</span>
+        </div>
+        <div class="ln"><span class="ln-num"></span><span class="ln-code">  <span class="kw">ENDMETHOD</span>.</span></div>
+        <div class="ln"><span class="ln-num"></span><span class="ln-code"><span class="kw">ENDCLASS</span>.</span></div>
+      </div>
+
+      <div class="callout-error">
+        <div class="title">⚠ Period '.' is MISSING</div>
+        <p>after out->write( 'Hello World' )</p>
+        <br>
+        <p>Correct:</p>
+        <p class="correct">out->write( 'Hello World' ).</p>
+        <br>
+        <p>Read the error message before editing.</p>
+      </div>
+    </div>
+
+    <div class="problems-panel">
+      <div class="problems-header">Problems ×</div>
+      <div class="problems-cols">
+        <span>Description</span>
+        <span>Resource</span>
+        <span>Location</span>
+      </div>
+      <div class="problems-row">
+        <div class="prob-desc">
+          <span class="err-badge">!</span>
+          <span>Syntax error: Period expected at end of statement (line 9)</span>
+        </div>
+        <span>z_abap_intro.clas.abap</span>
+        <span>line 9</span>
+      </div>
+    </div>
+
+    <div class="statusbar">Mockup: ADT Problems view — syntax error 'Period expected' at line 9</div>
+  </div>
+</body>
+</html>

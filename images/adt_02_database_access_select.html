@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mockup: adt_02_database_access_select</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #888;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+  }
+  .adt {
+    width: 720px;
+    border: 1px solid #444;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+  }
+  .titlebar {
+    background: #3c3c3c;
+    color: #f0f0f0;
+    padding: 7px 12px;
+    font-size: 13px;
+  }
+  .tabbar {
+    background: #e8e8e8;
+    display: flex;
+    border-bottom: 2px solid #0078d4;
+  }
+  .tab {
+    padding: 6px 16px;
+    font-size: 12px;
+    color: #444;
+    border-right: 1px solid #ccc;
+    cursor: default;
+  }
+  .tab.active {
+    background: white;
+    color: #1a1a1a;
+    border-bottom: 2px solid white;
+    margin-bottom: -2px;
+    font-weight: 500;
+  }
+  .fileinfo {
+    background: #f7f7f7;
+    padding: 3px 10px;
+    font-size: 11px;
+    color: #666;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .editor-wrap {
+    display: flex;
+    background: white;
+  }
+  .code-col {
+    flex: 1;
+    padding: 10px 0;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 12.5px;
+    line-height: 1.65;
+    overflow: hidden;
+  }
+  .ln {
+    display: flex;
+  }
+  .ln-num {
+    min-width: 34px;
+    text-align: right;
+    padding-right: 12px;
+    color: #bbb;
+    border-right: 1px solid #eee;
+    margin-right: 12px;
+    user-select: none;
+    flex-shrink: 0;
+  }
+  .ln-code {
+    white-space: pre;
+    color: #1a1a1a;
+  }
+  .kw  { color: #0070C0; }
+  .str { color: #a31515; }
+  .cmt { color: #008000; }
+  .callout {
+    width: 210px;
+    margin: 12px 10px 10px 0;
+    padding: 10px 11px;
+    background: #fffde7;
+    border: 1px solid #d4a017;
+    font-size: 11.5px;
+    line-height: 1.7;
+    color: #333;
+    align-self: flex-start;
+    flex-shrink: 0;
+  }
+  .callout p { margin-bottom: 3px; }
+  .statusbar {
+    background: #2c2c2c;
+    color: #b0b0b0;
+    padding: 5px 12px;
+    font-size: 11px;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+  <div class="adt">
+    <div class="titlebar">Eclipse IDE — ABAP Development Tools (ADT)</div>
+
+    <div class="tabbar">
+      <div class="tab active">z_sales_orders.clas.abap ×</div>
+    </div>
+
+    <div class="fileinfo">☐ z_sales_orders.clas.abap [Active]</div>
+
+    <div class="editor-wrap">
+      <div class="code-col">
+        <div class="ln"><span class="ln-num">1</span><span class="ln-code"><span class="kw">CLASS</span> z_sales_orders <span class="kw">DEFINITION PUBLIC FINAL CREATE PUBLIC</span>.</span></div>
+        <div class="ln"><span class="ln-num">2</span><span class="ln-code">  <span class="kw">PUBLIC SECTION</span>.</span></div>
+        <div class="ln"><span class="ln-num">3</span><span class="ln-code">    <span class="kw">INTERFACES</span> if_oo_adt_classrun.</span></div>
+        <div class="ln"><span class="ln-num">4</span><span class="ln-code"><span class="kw">ENDCLASS</span>.</span></div>
+        <div class="ln"><span class="ln-num">5</span><span class="ln-code"></span></div>
+        <div class="ln"><span class="ln-num">6</span><span class="ln-code"><span class="kw">CLASS</span> z_sales_orders <span class="kw">IMPLEMENTATION</span>.</span></div>
+        <div class="ln"><span class="ln-num">7</span><span class="ln-code">  <span class="kw">METHOD</span> if_oo_adt_classrun~main.</span></div>
+        <div class="ln"><span class="ln-num">8</span><span class="ln-code">    <span class="kw">DATA</span> lt_orders   <span class="kw">TYPE TABLE OF</span> vbak.</span></div>
+        <div class="ln"><span class="ln-num">9</span><span class="ln-code">    <span class="kw">DATA</span> lv_customer <span class="kw">TYPE</span> vbak-kunnr <span class="kw">VALUE</span> <span class="str">'1000'</span>.</span></div>
+        <div class="ln"><span class="ln-num">10</span><span class="ln-code"></span></div>
+        <div class="ln"><span class="ln-num">11</span><span class="ln-code">    <span class="cmt">* — Database access ————————————————</span></span></div>
+        <div class="ln"><span class="ln-num">12</span><span class="ln-code">    <span class="kw">SELECT</span> *</span></div>
+        <div class="ln"><span class="ln-num">13</span><span class="ln-code">      <span class="kw">FROM</span> vbak</span></div>
+        <div class="ln"><span class="ln-num">14</span><span class="ln-code">      <span class="kw">INTO TABLE</span> @lt_orders</span></div>
+        <div class="ln"><span class="ln-num">15</span><span class="ln-code">      <span class="kw">WHERE</span> kunnr = @lv_customer.</span></div>
+        <div class="ln"><span class="ln-num">16</span><span class="ln-code"></span></div>
+        <div class="ln"><span class="ln-num">17</span><span class="ln-code">    out->write( |Orders found: { lines( lt_orders ) }| ).</span></div>
+        <div class="ln"><span class="ln-num">18</span><span class="ln-code">  <span class="kw">ENDMETHOD</span>.</span></div>
+        <div class="ln"><span class="ln-num">19</span><span class="ln-code"><span class="kw">ENDCLASS</span>.</span></div>
+      </div>
+
+      <div class="callout">
+        <p>☐ SELECT executes on the <strong>DATABASE layer</strong> — not on the application server.</p>
+        <p>☐ WHERE filters at DB level.</p>
+        <p>☐ @lt_orders / @lv_customer — host variable syntax for ABAP Cloud.</p>
+      </div>
+    </div>
+
+    <div class="statusbar">Mockup: ADT editor — database access via SELECT in class</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mockup: adt_01_object_types_overview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #888;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+  }
+  .adt {
+    width: 560px;
+    border: 1px solid #444;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+  }
+  .titlebar {
+    background: #3c3c3c;
+    color: #f0f0f0;
+    padding: 7px 12px;
+    font-size: 13px;
+  }
+  .dialog-body {
+    background: #f5f5f5;
+    padding: 20px 24px;
+  }
+  .dialog-heading {
+    font-size: 17px;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  .field-label {
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  .filter-input {
+    width: 100%;
+    padding: 5px 8px;
+    border: 1px solid #aaa;
+    background: white;
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 10px;
+    outline: none;
+  }
+  .wizard-list {
+    border: 1px solid #aaa;
+    background: white;
+    margin-bottom: 14px;
+  }
+  .wizard-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 10px;
+    font-size: 13px;
+    color: #222;
+    cursor: default;
+  }
+  .wizard-item + .wizard-item {
+    border-top: 1px solid #f0f0f0;
+  }
+  .wizard-item.selected {
+    background: #0078d4;
+    color: white;
+  }
+  .item-icon {
+    width: 14px;
+    height: 14px;
+    border: 1px solid currentColor;
+    opacity: 0.7;
+    flex-shrink: 0;
+    display: inline-block;
+  }
+  .desc-box {
+    background: #fffde7;
+    border: 1px solid #d4a017;
+    padding: 10px 12px;
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    color: #333;
+  }
+  .button-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  .btn {
+    padding: 5px 18px;
+    border: 1px solid #999;
+    background: #e8e8e8;
+    font-size: 12px;
+    cursor: default;
+    font-family: inherit;
+  }
+  .btn.primary {
+    background: #0078d4;
+    color: white;
+    border-color: #0078d4;
+  }
+  .statusbar {
+    background: #2c2c2c;
+    color: #b0b0b0;
+    padding: 5px 12px;
+    font-size: 11px;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+  <div class="adt">
+    <div class="titlebar">Eclipse IDE — ABAP Development Tools (ADT)</div>
+
+    <div class="dialog-body">
+      <div class="dialog-heading">New ABAP Object</div>
+
+      <div class="field-label">Select a wizard:</div>
+      <input class="filter-input" type="text" placeholder="type filter text" readonly>
+
+      <div class="wizard-list">
+        <div class="wizard-item"><span class="item-icon"></span> ABAP Program (Report)</div>
+        <div class="wizard-item selected"><span class="item-icon"></span> ABAP Class</div>
+        <div class="wizard-item"><span class="item-icon"></span> ABAP Interface</div>
+        <div class="wizard-item"><span class="item-icon"></span> Function Module / Function Group</div>
+        <div class="wizard-item"><span class="item-icon"></span> CDS View / CDS View Entity</div>
+        <div class="wizard-item"><span class="item-icon"></span> Database Table (SE11)</div>
+        <div class="wizard-item"><span class="item-icon"></span> Message Class</div>
+        <div class="wizard-item"><span class="item-icon"></span> ABAP Unit Test</div>
+      </div>
+
+      <div class="desc-box">
+        Creates a new ABAP class. Implement <strong>if_oo_adt_classrun</strong>
+        to make the class directly executable from ADT using <strong>F9</strong>.
+      </div>
+
+      <div class="button-row">
+        <button class="btn">&lt; Back</button>
+        <button class="btn">Next &gt;</button>
+        <button class="btn primary">Finish</button>
+      </div>
+    </div>
+
+    <div class="statusbar">Mockup: ADT — New ABAP Object wizard</div>
+  </div>
+</body>
+</html>
