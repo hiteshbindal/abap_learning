@@ -33,18 +33,11 @@ All images are Eclipse ADT / SAP GUI mockups generated to illustrate key concept
 
 ## Assessment
 
-See [Assessment_Final_Assignment.md](Assessment_Final_Assignment.md) for full details.
+**Format:** Written Examination (Klausur)
 
-**Format:** Project Report (10–15 pages), no written examination.
+The examination format for this module has been changed from a project report to a written examination for the current semester, following a decision by the Examination Committee.
 
-**Topic options:**
-1. Evolution of ABAP
-2. ABAP Objects vs Classical ABAP
-3. Performance Optimization Techniques
-4. SAP Enhancements Framework
-5. ABAP and SAP S/4HANA
-6. CDS Views and Modern ABAP
-7. RAP — RESTful ABAP Programming Model
+Details (duration, permitted aids, and registration) will be communicated by your lecturer and confirmed via the official Hochschule Fresenius examination office.
 
 ---
 
@@ -59,7 +52,6 @@ See [Assessment_Final_Assignment.md](Assessment_Final_Assignment.md) for full de
 ├── Lecture_05_User_Interface_Programming.md
 ├── Lecture_06_Enhancements_and_Modifications.md
 ├── Lecture_07_Performance_Tuning_and_Best_Practices.md
-├── Assessment_Final_Assignment.md
 ├── README.md
 └── images/
     ├── adt_01_*.png  ...  adt_08_*.png   (Lecture 01)
