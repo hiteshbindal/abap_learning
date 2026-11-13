@@ -50,30 +50,33 @@ You should now see the ABAP perspective with the **Project Explorer** panel on t
 
 ---
 
-## 3. Connecting to the H01 System (First Time Only)
+## 3. Connecting to the ABAP Cloud System (First Time Only)
 
-You develop ABAP code *on the remote SAP system* — Eclipse is just the editor. You need to create an **ABAP Project** that connects Eclipse to the H01 system.
+You develop ABAP code *on the remote SAP BTP ABAP system* — Eclipse is just the editor. You need to create an **ABAP Cloud Project** that connects Eclipse to your BTP ABAP instance.
+
+> **ABAP Cloud Project vs. ABAP Project:** ADT has two project types. **ABAP Project** is for classic on-premise SAP systems (System ID, Application Server, Port). **ABAP Cloud Project** is for SAP BTP ABAP Environment — you use this one. Do not confuse them.
 
 **Step-by-step:**
 
 1. In the **Project Explorer**, right-click in the empty area.
-2. Select **New → ABAP Project**.
-3. The connection wizard opens. Click **New Connection...**
-4. Fill in the connection details your lecturer will provide:
+2. Select **New → ABAP Cloud Project**.
+3. The connection wizard opens. Select **SAP BTP ABAP Environment** and click **Next**.
+4. Enter the **Service Instance URL** your lecturer will provide:
 
    | Field | Value |
    |---|---|
-   | System ID | `H01` |
-   | Connection Type | `Custom Application Server` |
-   | Application Server | *(URL provided by lecturer)* |
-   | HTTPS Port | `443` |
+   | **Service Instance URL** | `https://<your-tenant>.abap.<region>.hana.ondemand.com` |
 
-5. Click **Next**, enter your username and password.
-6. Click **Finish**.
+   The URL is unique to your BTP ABAP tenant. Your lecturer will share it at the start of the session.
 
-The H01 project now appears in your **Project Explorer**. Expand it — you will see a tree of packages and development objects.
+5. Click **Next**. Eclipse opens a **browser window** for SAP BTP authentication.
+6. Log in with your SAP BTP credentials (email and password, or SSO if your institution uses it).
+7. After successful login the browser confirms authentication and you return to Eclipse.
+8. Click **Finish**.
 
-> **Already connected?** If H01 already appears in your Project Explorer, skip this step and go to section 4.
+The project now appears in your **Project Explorer** named after the tenant URL. Expand it — you will see a tree of packages and development objects.
+
+> **Already connected?** If the BTP project already appears in your Project Explorer, skip this step and go to section 4.
 
 ---
 
@@ -81,9 +84,9 @@ The H01 project now appears in your **Project Explorer**. Expand it — you will
 
 Every development object belongs to a **package**. Your lecturer has assigned each student a personal package.
 
-In the Project Explorer, expand:
+In the Project Explorer, expand your BTP project node:
 ```
-H01
+<your-tenant-name>
   └── ZLOCAL
         └── Z_LEC01          ← your package is here (or as assigned)
 ```
